@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones Bonitos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            background-color: #6200ea;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #3700b3;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            background-color: #000000;
+            transform: scale(0.95);
+        }
+
+        .button-option1 {
+            background-color: #ff6f61;
+        }
+
+        .button-option1:hover {
+            background-color: #ff3b2f;
+        }
+
+        .button-option2 {
+            background-color: #6b5b95;
+        }
+
+        .button-option2:hover {
+            background-color: #4a3c6b;
+        }
+
+        .button-option3 {
+            background-color: #88b04b;
+        }
+
+        .button-option3:hover {
+            background-color: #6a8f3d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <a href="opcion1/"><button class="button button-option1">Opción 1</button></a>
+        <a href="opcion2/"><button class="button button-option2">Opción 2</button></a>
+        <a href="opcion1/"><button class="button button-option3">Opción 3</button></a>
+    </div>
+
+</body>
+</html>
