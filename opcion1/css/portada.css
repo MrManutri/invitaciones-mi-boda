@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura de la ventana gráfica */
+    background: url('../img/imagen_dos.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(121, 119, 146, 0.5); /* Oscurece la imagen de fondo */
+    z-index: 1;
+}
+
+.ramas {
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    transition: top 0.5s, opacity 0.5s;
+}
+
+.rama {
+    width: 20%;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.rama:first-child {
+    transform: scaleX(-1); /* Voltea la primera rama horizontalmente */
+}
+.contenido {
+    position: relative;
+    z-index: 3;
+}
+
+.fecha {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fecha::before,
+.fecha::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: white;
+    margin: 0 10px;
+}
+
+.nombre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    margin: 20px 0;
+    position: relative;
+    flex-direction: column; /* Asegura que los elementos dentro de .nombre se apilen verticalmente */
+}
+
+.nombre-texto {
+    font-family: 'Dancing Script', cursive;
+}
+
+.andpersand {
+    display: inline-block;
+    width: 1em; /* Tamaño más pequeño */
+    height: 1em; /* Tamaño más pequeño */
+    line-height: 1em; /* Alineación vertical */
+    border-radius: 50%;
+    background-color: white; /* Color de fondo del círculo */
+    color: #333; /* Color de la letra */
+    text-align: center;
+    margin: 0 0px; /* Espaciado alrededor del círculo */
+    font-size: 0.5em; /* Tamaño de la fuente más pequeño */
+    font-family: 'dancing script', cursive;
+}
+
+.nombre::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    margin: 20px auto 0; /* Espaciado superior y centrado horizontal */
+}
+
+.descripcion {
+    font-size: 1.5em;
+    margin-top: 100px;
+    max-width: 600px;
+}
+
+/* Flecha de scroll */
+.scroll-down {
+    width: 30px;
+    height: 30px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    margin: 20px auto 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+    40% {
+        transform: translateY(10px) rotate(-45deg);
+    }
+    60% {
+        transform: translateY(5px) rotate(-45deg);
+    }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .fecha {
+        font-size: 1em;
+    }
+
+    .nombre {
+        font-size: 3em;
+        flex-direction: column; /* Asegura que los elementos dentro de .nombre se apilen verticalmente en pantallas pequeñas */
+    }
+
+    .andpersand {
+        width: 1.2em; /* Ajusta el tamaño del círculo */
+        height: 1.2em; /* Ajusta el tamaño del círculo */
+        line-height: 1.2em; /* Ajusta la alineación vertical */
+        font-size: 0.6em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .descripcion {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+}
+
+/* Media Queries para tablets */
+@media (min-width: 769px) and (max-width: 1025px) {
+    .fecha {
+        font-size: 2em;
+    }
+
+    .nombre {
+        font-size: 5em;
+    }
+
+    .andpersand {
+        width: 1.5em; /* Ajusta el tamaño del círculo */
+        height: 1.5em; /* Ajusta el tamaño del círculo */
+        line-height: 1.5em; /* Ajusta la alineación vertical */
+        font-size: 0.75em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .descripcion {
+        font-size: 1.3em;
+        margin-top: 15px;
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media (min-width: 1025px) {
+    .fecha {
+        font-size: 2em;
+    }
+
+    .nombre {
+        font-size: 5em;
+    }
+
+    .andpersand {
+        width: 1em; /* Ajusta el tamaño del círculo */
+        height: 1em; /* Ajusta el tamaño del círculo */
+        line-height: 1em; /* Ajusta la alineación vertical */
+        font-size: 0.5em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .descripcion {
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+}
